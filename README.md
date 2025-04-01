@@ -23,6 +23,19 @@ Este proyecto busca resolver esa problemática mediante:
 - **X (ex Twitter) API**
 - **LinkedIn API**
 - **Talkwalker API** (para análisis de sentimiento y métricas)
+- **Email Octopus API** (para análisis de campañas de marketing)
+
+### ✉️ Email Octopus (Automatización de Campañas)
+
+Además de redes sociales, el proyecto también integra el rendimiento de campañas de email marketing realizadas con Email Octopus, incluyendo:
+
+- Número de aperturas
+- Número de clics
+- Desuscripciones
+- Rebotes
+- Link de visualización del correo
+
+Esto permitirá eliminar el proceso manual de toma de screenshots y generación de presentaciones. Toda esta información será capturada por medio de la API oficial y cargada al Data Warehouse para alimentar los dashboards en Power BI.
 
 ---
 
