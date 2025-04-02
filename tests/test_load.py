@@ -13,5 +13,5 @@ posts = extraer_publicaciones("Claro Nicaragua", inicio, fin)
 transformados = transformar_publicaciones(posts, "Claro Nicaragua", "Facebook")
 cargar_publicaciones(transformados)
 
-#
+
 
