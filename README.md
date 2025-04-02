@@ -41,6 +41,8 @@ Esto permitirá eliminar el proceso manual de toma de screenshots y generación 
 
 ## 🧱 Esquema del Data Warehouse
 
+📂 [sql/00_crear_tablas_dw.sql](sql/00_crear_tablas_dw.sql): Script para crear todas las tablas del Data Warehouse.
+
 Se crearán tablas estructuradas para:
 
 - 📄 Publicaciones por red social
@@ -48,6 +50,7 @@ Se crearán tablas estructuradas para:
 - 🎯 Métricas de alcance, impresiones, engagement
 - 📸 Archivos multimedia descargados por publicación
 - 🧠 Sentimiento cruzado entre Talkwalker y redes sociales
+- ✉️ Métricas de campañas de marketing via Mail
 
 > El diseño del esquema permitirá crear reportes dinámicos y comparativos, como:
 > - Evolución de métricas por canal
@@ -92,4 +95,5 @@ proyecto_etl/
 ├── config/
 ├── data/
 ├── logs/
+├── sql/
 └── README.md

@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+
+# Entornos virtuales
+venv/
+env/
+
+# Archivos temporales
+.env
+*.log
+*.tmp
+
+# Configuración personal
+
+config/.env
+
+# Data local (descargas, imágenes, txts)
+data/
