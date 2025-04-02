@@ -29,13 +29,19 @@ def obtener_datos_pagina(nombre_objetivo):
     print(f"❌ No se encontró la página '{nombre_objetivo}' en la cuenta.")
     return None, None
 
-def obtener_publicaciones(page_id, page_token, limite = 10):
+def obtener_publicaciones(page_id, page_token, fecha_inicio, fecha_fin, limite = 100):
     url = f"https://graph.facebook.com/v19.0/{page_id}/posts"
     params = {
         "access_token": page_token,
         "fields": "message,created_time,permalink_url",
         "limit": limite
     }
+
+    if fecha_inicio and fecha_fin:
+        params["since"] = int(fecha_inicio.timestamp())
+        params["until"] = int(fecha_fin.timestamp())
+    else:
+        params["limit"] = limite
 
     response = requests.get(url, params=params)
     if response.status_code == 200:
@@ -44,11 +50,11 @@ def obtener_publicaciones(page_id, page_token, limite = 10):
         print("❌ Error al obtener publicaciones:", response.text)
         return []
 
-def extraer_publicaciones(nombre_pagina):
+def extraer_publicaciones(nombre_pagina, fecha_inicio = None, fecha_fin = None):
     page_id, page_token = obtener_datos_pagina(nombre_pagina)
     if not page_id or not page_token:
         return []
     
-    return obtener_publicaciones(page_id, page_token)
+    return obtener_publicaciones(page_id, page_token, fecha_inicio, fecha_fin)
 
     
