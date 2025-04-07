@@ -128,6 +128,12 @@ FB_TOKEN=tu_token_de_facebook
 
 - 👤 Solo el autor tiene permisos de push a main
 
+---
+
+## 📬 Contacto
+
+Este proyecto fue desarrollado como parte de mi experiencia profesional en automatización de datos y marketing digital.  
+Podés ver más proyectos en [mi perfil de GitHub](https://github.com/andres-c0) o contactarme en caso de interés profesional.
 
 
 
