@@ -12,8 +12,10 @@ env/
 *.tmp
 
 # Configuración personal
-
 config/.env
 
 # Data local (descargas, imágenes, txts)
 data/
+
+# Archivos de prueba
+tests/
