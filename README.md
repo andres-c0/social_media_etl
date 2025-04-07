@@ -1,6 +1,6 @@
 # 🚀 ETL Automatizado de Redes Sociales para Reportes Presidenciales y de Competencia
 
-Este proyecto tiene como objetivo centralizar, automatizar y estructurar la extracción de datos desde diversas plataformas sociales para generar reportes de alto nivel solicitados por el cliente **CLARO**, tales como el **Reporte Presidencial** (mensual y semanal) y el **Reporte de Competencia**.
+Este proyecto tiene como objetivo centralizar, automatizar y estructurar la extracción de datos desde diversas plataformas sociales para generar reportes de alto nivel solicitados por el cliente. Los cuales muestran información acerca del rendimiento que la empresa esta obteniendo en las campañas de marketing por el canal mencionado.
 
 ---
 
@@ -42,6 +42,8 @@ Esto permitirá eliminar el proceso manual de toma de screenshots y generación 
 ## 🧱 Esquema del Data Warehouse
 
 📂 [sql/00_crear_tablas_dw.sql](sql/00_crear_tablas_dw.sql): Script para crear todas las tablas del Data Warehouse.
+🖼️ [`sql/modelo_ER.png`](sql/modelo_ER.png): Diagrama Entidad-Relación del esquema.
+
 
 Se crearán tablas estructuradas para:
 
@@ -96,4 +98,36 @@ proyecto_etl/
 ├── data/
 ├── logs/
 ├── sql/
+├── .env.example
 └── README.md
+```
+---
+
+## 🔧 Configuración del entorno (`.env`)
+
+Antes de ejecutar, se debera crear un archivo  `.env` en la raíz del proyecto basado en el `.env.example`:
+
+```env
+SQL_SERVER=localhost
+SQL_DATABASE=digitas_dw
+SQL_USER=usuario
+SQL_PASSWORD=contraseña
+
+FB_TOKEN=tu_token_de_facebook
+```
+
+---
+
+## 🛡️ Seguridad del Repositorio
+
+- 🔒 .env no está versionado (configurado en .gitignore)
+
+- ✅ No se expone ningún token o credencial
+
+- 🧪 Secret scanning activado en GitHub
+
+- 👤 Solo el autor tiene permisos de push a main
+
+
+
+
