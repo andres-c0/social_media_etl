@@ -21,3 +21,19 @@ def get_sql_connection():
     except Exception as e:
         print("❌ Error al conectar con SQL Server:", e)
         return None
+    
+def obtener_ids_publicaciones():
+    conn = get_sql_connection()
+    cursor = conn.cursor()
+
+    query = "SELECT id_publicacion FROM publicaciones"
+    cursor.execute(query)
+
+    ids = [row[0] for row in cursor.fetchall()]
+
+    conn.close()
+
+    return ids
+
+
+
