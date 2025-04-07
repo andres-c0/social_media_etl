@@ -18,7 +18,7 @@
  )
 
  CREATE TABLE publicaciones(
-	id_publicacion NVARCHAR(MAX) NOT NULL,
+	id_publicacion NVARCHAR(200) NOT NULL,
 	id_fuente INT NOT NULL,
 	id_red_social INT NOT NULL,
 	texto NVARCHAR(MAX) NOT NULL,
@@ -33,11 +33,11 @@
  )
 
  CREATE TABLE comentarios(
-	id_comentario INT NOT NULL,
-	id_publicacion NVARCHAR(MAX) NOT NULL,
+	id_comentario NVARCHAR(255) NOT NULL,
+	id_publicacion NVARCHAR(200) NOT NULL,
 	texto_comentario NVARCHAR(MAX) NOT NULL,
-	sentimiento_meta NVARCHAR(55) NOT NULL,
-	sentimiento_talkwalker NVARCHAR(55) NOT NULL,
+	sentimiento_meta NVARCHAR(55),
+	sentimiento_talkwalker NVARCHAR(55),
 	fecha_comentario DATETIME NOT NULL,
 	fecha_creacion DATETIME DEFAULT GETDATE()
 
