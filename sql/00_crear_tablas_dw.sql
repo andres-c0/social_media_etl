@@ -46,7 +46,7 @@
  )
 
  CREATE TABLE metricas_publicacion(
-	id_publicacion NVARCHAR(MAX) NOT NULL,
+	id_publicacion NVARCHAR(200) NOT NULL,
 	alcance INT NOT NULL,
 	impresiones INT NOT NULL,
 	vistas INT NOT NULL,
@@ -61,7 +61,7 @@
 
  CREATE TABLE multimedia_publicacion(
 	id_media INT NOT NULL,
-	id_publicacion NVARCHAR(MAX) NOT NULL,
+	id_publicacion NVARCHAR(200) NOT NULL,
 	url_media NVARCHAR(MAX) NOT NULL,
 	tipo_media NVARCHAR(55) NOT NULL,
 	ruta_local NVARCHAR(MAX) NOT NULL,
