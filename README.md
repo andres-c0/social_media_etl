@@ -112,7 +112,6 @@ SQL_SERVER=localhost
 SQL_DATABASE=digitas_dw
 SQL_USER=usuario
 SQL_PASSWORD=contraseña
-
 FB_TOKEN=tu_token_de_facebook
 ```
 

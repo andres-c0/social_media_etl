@@ -40,17 +40,17 @@ def transformar_publicaciones(publicaciones_json, nombre_fuente, nombre_red_soci
 
 
 def clasificar_tipo(enlace):
-    if "video" in enlace:
+    if "/videos" in enlace:
         return "video"
-    elif "photo" in enlace or "photos" in enlace:
+    elif "/photo" in enlace or "photos" in enlace:
         return "imagen"
-    elif "story" in enlace:
+    elif "/story/" in enlace:
         return "historia"
-    elif "posts" in enlace:
+    elif "/posts/" in enlace:
         return "texto"
-    elif "reel" in enlace:
+    elif "/reel/" in enlace:
         return "reel"
-    elif "link" in enlace:
+    elif "/link/" in enlace:
         return "enlace"
     else:
         return "desconocido"

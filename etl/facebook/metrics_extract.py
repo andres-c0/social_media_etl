@@ -36,6 +36,8 @@ def extraer_metricas():
     metricas_extraidas = []
 
     metricas_insights = ["post_impressions", "post_reach", "post_reactions_by_type_total"]
+    print("📌 Lista actual de métricas:", metricas_insights)
+
 
     for post_id in ids_publicaciones:
         page_id = post_id.split('_')[0]
@@ -51,7 +53,8 @@ def extraer_metricas():
         impresiones = alcance = likes = 0
 
         for metrica in metricas_insights:
-            url_individual = f"https://graph.facebook.com/v19.0/{post_id}/insights"
+            print(f"🔎 Probando métrica: {metrica}")
+            url_individual = f"https://graph.facebook.com/v22.0/{post_id}/insights"
             params = {
                 "metric": metrica,
                 "access_token": page_token
@@ -80,7 +83,7 @@ def extraer_metricas():
 
         # --- 2. Comentarios y compartidos desde endpoint directo ---
         comentarios = shares = 0
-        url_post = f"https://graph.facebook.com/v19.0/{post_id}"
+        url_post = f"https://graph.facebook.com/v22.0/{post_id}"
         params_post = {
             "fields": "comments.summary(true),shares",
             "access_token": page_token
