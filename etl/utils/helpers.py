@@ -38,3 +38,4 @@ def obtener_tokens_paginas(FB_TOKEN):
 
 def extraer_page_id(id_publicacion):
     return id_publicacion.split("_")[0]
+
