@@ -3,7 +3,9 @@ import os
 import time
 import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
-from etl.utils.sql_connection import obtener_ids_publicaciones
+from etl.utils.helpers import obtener_ids_publicaciones
+from etl.utils.helpers import obtener_tokens_paginas
+from etl.utils.helpers import extraer_page_id
 from dotenv import load_dotenv
 
 # Cargar las variables del archivo .env
@@ -11,30 +13,30 @@ dotenv_path = os.path.join(os.path.dirname(__file__), '../../config/.env')
 load_dotenv(dotenv_path)
 FB_TOKEN  = os.getenv("FB_TOKEN")
 
-def extraer_page_id(id_publicacion):
-    return id_publicacion.split("_")[0]
+# def extraer_page_id(id_publicacion):
+#     return id_publicacion.split("_")[0]
 
-def obtener_tokens_paginas():
-    url = "https://graph.facebook.com/v19.0/me/accounts"
-    params = {
-        "access_token": FB_TOKEN
-    }
+# def obtener_tokens_paginas():
+#     url = "https://graph.facebook.com/v19.0/me/accounts"
+#     params = {
+#         "access_token": FB_TOKEN
+#     }
 
-    response = requests.get(url, params=params)
-    data = response.json()
+#     response = requests.get(url, params=params)
+#     data = response.json()
 
-    tokens = {}
-    for pagina in data.get("data", []):
-        tokens[pagina["id"]] = pagina["access_token"]
+#     tokens = {}
+#     for pagina in data.get("data", []):
+#         tokens[pagina["id"]] = pagina["access_token"]
     
-    return tokens
+#     return tokens
 
 
 def extraer_comentarios():
     publicaciones_ids = obtener_ids_publicaciones()
     print(f"🗂️ Se encontraron {len(publicaciones_ids)} publicaciones para procesar comentarios.")
 
-    tokens_paginas = obtener_tokens_paginas()
+    tokens_paginas = obtener_tokens_paginas(FB_TOKEN)
 
     todos_los_comentarios = []
 
