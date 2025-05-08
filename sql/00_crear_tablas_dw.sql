@@ -60,7 +60,7 @@
  )
 
  CREATE TABLE multimedia_publicacion(
-	id_media INT NOT NULL,
+	id_media NVARCHAR(200) NOT NULL,
 	id_publicacion NVARCHAR(200) NOT NULL,
 	url_media NVARCHAR(MAX) NOT NULL,
 	tipo_media NVARCHAR(55) NOT NULL,

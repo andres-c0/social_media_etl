@@ -23,5 +23,14 @@ def transformar_multimedia(lista_multimedia, carpeta_base="data/multimedia"):
                 f.write(response.content)
 
             resultados.append({
-                
+                "id_publicacion": id_publicacion,
+                "tipo_media": tipo_media,
+                "url_media": url_media,
+                "ruta_local": ruta_local
             })
+
+        except Exception as e:
+            print(f"⚠️ Error al descargar {url_media}: {e}")
+        
+    return resultados
+
