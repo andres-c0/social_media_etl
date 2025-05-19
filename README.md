@@ -117,6 +117,21 @@ FB_TOKEN=tu_token_de_facebook
 
 ---
 
+## 💻 Requerimientos minimos
+
+El equipo en donde se ejecutaran los scripts escritos en este repositorio debera contar con los siguientes requerimientos minimos:
+
+- Visual Studio Code `v1.98.0`
+
+- SQL Server 2022
+
+- SQL Server Management Studio	`v20.2.30.0`
+
+- Python `v3.13`
+
+
+---
+
 ## 🛡️ Seguridad del Repositorio
 
 - 🔒 .env no está versionado (configurado en .gitignore)

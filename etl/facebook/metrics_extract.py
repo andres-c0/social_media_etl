@@ -4,7 +4,7 @@ import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
 from datetime import datetime
 from etl.utils.helpers import obtener_ids_publicaciones
-from etl.utils.helpers import extraer_page_id
+from etl.utils.helpers import obtener_tokens_paginas
 from dotenv import load_dotenv
 
 # Cargar las variables del archivo .env
@@ -12,30 +12,15 @@ dotenv_path = os.path.join(os.path.dirname(__file__), '../../config/.env')
 load_dotenv(dotenv_path)
 FB_TOKEN  = os.getenv("FB_TOKEN")
 
-def obtener_tokens_paginas():
-    url = "https://graph.facebook.com/v19.0/me/accounts"
-    params = {
-        "access_token": FB_TOKEN
-    }
-
-    response = requests.get(url, params=params)
-    data = response.json()
-
-    tokens = {}
-    for pagina in data.get("data", []):
-        tokens[pagina["id"]] = pagina["access_token"]
-    
-    return tokens
-
 def extraer_metricas():
     print("✅ Conexión a SQL Server exitosa.")
     ids_publicaciones = obtener_ids_publicaciones()
     print(f"🗂️ Se encontraron {len(ids_publicaciones)} publicaciones para procesar métricas.")
 
-    tokens_paginas = obtener_tokens_paginas()
+    tokens_paginas = obtener_tokens_paginas(FB_TOKEN)
     metricas_extraidas = []
 
-    metricas_insights = ["post_impressions", "post_reach", "post_reactions_by_type_total"]
+    metricas_insights = ["post_impressions", "post_impressions_unique", "post_reactions_by_type_total"]
     print("📌 Lista actual de métricas:", metricas_insights)
 
 
@@ -71,7 +56,7 @@ def extraer_metricas():
 
                 if metrica == "post_impressions":
                     impresiones = valor
-                elif metrica == "post_reach":
+                elif metrica == "post_impressions_unique":
                     alcance = valor
                 elif metrica == "post_reactions_by_type_total":
                     likes = sum(valor.values()) if isinstance(valor, dict) else 0
