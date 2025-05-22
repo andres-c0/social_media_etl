@@ -20,8 +20,6 @@ Este proyecto busca resolver esa problemática mediante:
 ## 🧩 Fuentes de Datos Integradas (APIs)
 
 - **Meta Graph API** (Facebook + Instagram)
-- **X (ex Twitter) API**
-- **LinkedIn API**
 - **Talkwalker API** (para análisis de sentimiento y métricas)
 - **Email Octopus API** (para análisis de campañas de marketing)
 
