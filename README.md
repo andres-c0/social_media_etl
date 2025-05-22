@@ -87,9 +87,8 @@ Una vez los datos estén estructurados en el Data Warehouse, se construirán das
 proyecto_etl/
 ├── etl/
 │   ├── facebook/
-│   ├── linkedin/
+│   ├── instagram/
 │   ├── talkwalker/
-│   ├── x/
 │   └── utils/
 ├── dags/
 ├── config/
