@@ -88,5 +88,3 @@ Esta guía está diseñada para que puedas trabajar de forma ordenada y eficient
 - Usá nombres claros para tus ramas: `feature/facebook_etl`, `hotfix/arreglo_fecha`, etc.
 
 ---
-
-Con esta rutina mantenés tu repo limpio, ordenado y profesional ✨

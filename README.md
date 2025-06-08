@@ -114,6 +114,21 @@ FB_TOKEN=tu_token_de_facebook
 
 ---
 
+## 💻 Requerimientos minimos
+
+El equipo en donde se ejecutaran los scripts escritos en este repositorio debera contar con los siguientes requerimientos minimos:
+
+- Visual Studio Code `v1.98.0`
+
+- SQL Server 2022
+
+- SQL Server Management Studio	`v20.2.30.0`
+
+- Python `v3.13`
+
+
+---
+
 ## 🛡️ Seguridad del Repositorio
 
 - 🔒 .env no está versionado (configurado en .gitignore)
@@ -131,5 +146,14 @@ FB_TOKEN=tu_token_de_facebook
 Este proyecto fue desarrollado como parte de mi experiencia profesional en automatización de datos y marketing digital.  
 Podés ver más proyectos en [mi perfil de GitHub](https://github.com/andres-c0) o contactarme en caso de interés profesional.
 
+```plaintext
+competencia/
+├── data/
+│   ├── competidor_post.xlsx
+│   ├── post.xlsx
+│   ├── tipo_contenido.xlsx
+│   └── 1. Anteriores/
+├── pdf/
+└── tablas/
 
-
+```

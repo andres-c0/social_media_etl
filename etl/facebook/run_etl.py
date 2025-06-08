@@ -65,3 +65,5 @@ if __name__ == "__main__":
         extraer_multimedia=False,
         extraer_audiencia=False
     )
+
+# Proyecto desarrollado por Carlos Andres Cabrera Orellana 07/03/2025 - 30/05/2025
