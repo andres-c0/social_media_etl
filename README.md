@@ -145,15 +145,3 @@ El equipo en donde se ejecutaran los scripts escritos en este repositorio debera
 
 Este proyecto fue desarrollado como parte de mi experiencia profesional en automatización de datos y marketing digital.  
 Podés ver más proyectos en [mi perfil de GitHub](https://github.com/andres-c0) o contactarme en caso de interés profesional.
-
-```plaintext
-competencia/
-├── data/
-│   ├── competidor_post.xlsx
-│   ├── post.xlsx
-│   ├── tipo_contenido.xlsx
-│   └── 1. Anteriores/
-├── pdf/
-└── tablas/
-
-```
