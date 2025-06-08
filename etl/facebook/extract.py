@@ -40,15 +40,22 @@ def obtener_publicaciones(page_id, page_token, fecha_inicio, fecha_fin, limite =
     if fecha_inicio and fecha_fin:
         params["since"] = int(fecha_inicio.timestamp())
         params["until"] = int(fecha_fin.timestamp())
-    else:
-        params["limit"] = limite
 
-    response = requests.get(url, params=params)
-    if response.status_code == 200:
-        return response.json().get("data", [])
-    else:
-        print("❌ Error al obtener publicaciones:", response.text)
-        return []
+    publicaciones = []
+
+    while url:
+        response = requests.get(url, params=params)
+        if response.status_code == 200:
+            data = response.json()
+            publicaciones.extend(data.get("data", []))
+            paging = data.get("paging", {})
+            url = paging.get("next")  # Nueva URL para la siguiente página
+            params = {}  # Solo se usan en la primera llamada
+        else:
+            print("❌ Error al obtener publicaciones:", response.text)
+            break
+
+    return publicaciones
 
 def extraer_publicaciones(nombre_pagina, fecha_inicio = None, fecha_fin = None):
     page_id, page_token = obtener_datos_pagina(nombre_pagina)
