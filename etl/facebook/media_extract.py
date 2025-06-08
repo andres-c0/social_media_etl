@@ -1,16 +1,11 @@
 import requests
 import os
 import sys
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
 from dotenv import load_dotenv
-from etl.utils.helpers import obtener_tokens_paginas
-from etl.utils.lookup import get_sql_connection
-from etl.utils.helpers import obtener_ids_publicaciones
+from etl.utils.helpers import obtener_tokens_paginas, obtener_ids_publicaciones
 
-dotenv_path = os.path.join(os.path.dirname(__file__), '../../config/.env')
-load_dotenv(dotenv_path)
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
 
-# Cargar las variables del archivo .env
 dotenv_path = os.path.join(os.path.dirname(__file__), '../../config/.env')
 load_dotenv(dotenv_path)
 FB_TOKEN  = os.getenv("FB_TOKEN")
